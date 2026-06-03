@@ -5,30 +5,28 @@ body {
 
 .card {
   background-color: white;
+  margin: 20vh auto;
   width: 400px;
-  /* the card is stuck to the top-left corner of the page */
 }
-
-img {
+html img {
   width: 100%;
 }
 
 .card-body {
-  /* all text sits flush against the edge of the card */
+  margin: 12px;
 }
 
 .tag {
   background-color: #2a7a2a;
+  padding: 1vh;
   color: white;
-  /* the text is touching the edges of the green label */
 }
 
 h2 {
   font-size: 1.2rem;
-  /* there is too much space above the heading */
+  padding: auto;
 }
 
 p {
-  margin-bottom: 0;
-  /* the link below feels too close to the paragraph */
+  margin-bottom: 10px;
 }
