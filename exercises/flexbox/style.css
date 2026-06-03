@@ -64,7 +64,6 @@ nav {
 
   /* TODO 2: center items vertically */
   align-items: center;
-
   /* TODO 3: push .nav-links to the right side */
   justify-content: space-between;
 }
@@ -72,6 +71,7 @@ nav {
 .nav-logo {
   font-weight: 700;
   font-size: 1.2rem;
+  flex: 4;
 }
 
 .nav-links {
@@ -93,7 +93,6 @@ nav {
 
   /* TODO 5: turn .card-row into a flex container */
   display: flex;
-
   /* TODO 6: add space between the cards */
   gap: 1rem;
 }
@@ -132,4 +131,5 @@ nav {
 
 .card-rating {
   font-size: 1.1rem;
+  align-self: baseline;
 }
