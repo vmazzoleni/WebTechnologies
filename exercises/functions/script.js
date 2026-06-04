@@ -18,6 +18,10 @@ formatPrice(4.5, "EUR"); // → EUR 4.50
 // ============================================================
 
 // TODO 1: call formatPrice() with a price of your choice
+function callFormatPrice() {
+  formatPrice(19.99, "USD"); // → USD 19.99
+}
+
 
 // TODO 2: define a function called discount
 //         it takes two parameters: price and percent
@@ -25,3 +29,10 @@ formatPrice(4.5, "EUR"); // → EUR 4.50
 //         EXAMPLE: discount(100, 20) → "Price after discount: CHF 80.00"
 
 // TODO 3: call discount() with two different examples
+function discount(price, percent) {
+  const discountedPrice = price - (price * (percent / 100));
+  console.log(`Price after discount: CHF ${discountedPrice.toFixed(2)}`);
+}
+
+discount(100, 20); // → Price after discount: CHF 80.00
+discount(50, 10); // → Price after discount: CHF 45.00  
