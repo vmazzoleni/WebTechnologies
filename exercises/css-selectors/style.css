@@ -1,89 +1,57 @@
-/* ============================================================
-   EXERCISE: CSS Selectors
-   ============================================================
-
-   Work through the TODOs.
-   Each one introduces a different way to target elements.
-
-============================================================ */
-
-/* --- Base styles (already done for you) --- */
-
-body {
-  font-family: sans-serif;
-  font-size: 0.95rem;
-  max-width: 600px;
-  margin: 2rem auto;
-  color: #555;
-}
+/* ── TODO 1: Element selector ─────────────────────────────── */
 
 p {
-  border: 1px solid #ddd;
-  color: black;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
+  color: #555;
+  font-size: 0.95rem;
 }
+
+/* ── TODO 2: Class selector ───────────────────────────────── */
 
 .highlight {
   background-color: #fffbdd;
   border-left: 4px solid gold;
-  .first-class.second-class {
-    font-weight: bold;
-  }
 }
+
+/* ── TODO 3: ID selector ──────────────────────────────────── */
 
 #intro {
   font-style: italic;
   color: #333;
 }
 
+/*
+Does your color apply?
+
+Maybe not. IDs have higher specificity than element selectors,
+so #intro should override the color from p.
+If it doesn't, another more specific selector may be winning.
+*/
+
+/* ── TODO 4: Descendant selector ──────────────────────────── */
+
 .card p {
-  border: 1px solid #ddd;
-  color: black;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
+  color: #444;
 }
 
-.card strong {
-  color: blue; /* this rule already exists — don't touch it */
-}
+/*
+Notice:
+Only <p> elements INSIDE .card are affected.
+This selector is more specific than just p.
+*/
 
-.card .highlight {
+/* ── TODO 5: Multiple classes ─────────────────────────────── */
+
+.card.highlight {
   font-weight: bold;
 }
 
-/* ── TODO 1: Element selector ───────────────────────────────
-   Target ALL <p> elements on the page.
-   Set their color to #555 and font-size to 0.95rem.
+/*
+No space between .card and .highlight.
+This targets elements that have BOTH classes.
 */
 
-/* ── TODO 2: Class selector ─────────────────────────────────
-   Target only elements with the class "highlight".
-   Give them a background-color of #fffbdd and a
-   border-left: 4px solid gold.
-*/
+/* ── TODO 6: The broken rule ──────────────────────────────── */
 
-/* ── TODO 3: ID selector ────────────────────────────────────
-   Target the element with id "intro".
-   Make it italic and give it a different color than TODO 1.
-   Does your color apply? If not — why not?
-*/
-
-/* ── TODO 4: Descendant selector ────────────────────────────
-   Target only <p> elements that are inside a .card.
-   Change their color to #444.
-   What do you notice compared to TODO 1?
-*/
-
-/* ── TODO 5: Multiple classes ───────────────────────────────
-   The second card has BOTH classes: "card" AND "highlight".
-   Target only elements that have both classes at once.
-   HINT: .first-class.second-class { } — no space between them
-   Make the text of that card bold.
-*/
-
-/* ── TODO 6: The broken rule ────────────────────────────────
-   Try to make ALL <strong> elements red.
-*/
+strong {
+  color: red;
+}
