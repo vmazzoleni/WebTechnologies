@@ -21,6 +21,17 @@ const resetBtn = document.querySelector('[data-action="reset"]');
 // TODO 1: add a click event listener to greetBtn
 //         inside it, change title.textContent and subtitle.textContent
 
+greetBtn.addEventListener("click", () => {
+  title.textContent = "Hello, World!";
+  subtitle.textContent = "The button was clicked.";
+}); 
+
+ 
+
 
 // TODO 2: add a click event listener to resetBtn
 //         inside it, reset both texts to their original values
+resetBtn.addEventListener("click", () => {
+  title.textContent = "Welcome to our website!";
+  subtitle.textContent = "Click the button to greet!";
+}); 

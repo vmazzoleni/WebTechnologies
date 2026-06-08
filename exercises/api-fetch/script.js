@@ -44,8 +44,8 @@ console.log("script loaded");
 
 console.log("script loaded");
 
-const button = document.querySelector("#search-btn");
 const input = document.querySelector("#search-input");
+const button = document.querySelector("#search-btn");
 const resultsList = document.querySelector("#results");
 
 button.addEventListener("click", async () => {
@@ -68,15 +68,23 @@ button.addEventListener("click", async () => {
       return;
     }
 
-    books.forEach((book) => {
+
+
+    for(let i = 0; i < books.length; i++) {
+      const book = books[i];
       const title = book.title;
       const authors = book.author_name ? book.author_name.join(", ") : "Unknown author";
       const li = document.createElement("li");
       li.textContent = `${title} — ${authors}`;
       resultsList.appendChild(li);
-    });
+    }
 
-  } catch (error) {
+    const li = document.createElement("li");
+    li.textContent = `${title} — ${authors}`;
+    resultsList.appendChild(li);  
+  } 
+  
+  catch (error) {
     resultsList.innerHTML = `<li>Something went wrong: ${error.message}</li>`;
     console.error(error);
   }

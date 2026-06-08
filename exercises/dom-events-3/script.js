@@ -18,13 +18,32 @@ const status = document.querySelector('[data-el="status"]');
 
 // TODO 1: loop over all items and add a click event listener to each one
 //         HINT: you already know how to loop over a NodeList
+for (const item of items) {
+  item.addEventListener("click", () => {
+    // This function will run when an item is clicked
 
+    // TODO 2: inside the listener, toggle the line-through style on the clicked item
+    //         HINT: you can read and write inline styles via element.style.textDecoration
+    //         HINT: use an if/else — check the current value and flip it
 
-// TODO 2: inside the listener, toggle the line-through style on the clicked item
-//         HINT: you can read and write inline styles via element.style.textDecoration
-//         HINT: use an if/else — check the current value and flip it
+    if (item.style.textDecoration === "line-through") {
+      item.style.textDecoration = ""; // un-mark it
+    } else {
+      item.style.textDecoration = "line-through"; // mark it as done
+    }
 
+    // TODO 3: after toggling, count how many items currently have line-through
+    //         and update status.textContent
+    //         HINT: loop over all items again and count the ones with line-through
 
-// TODO 3: after toggling, count how many items currently have line-through
-//         and update status.textContent
-//         HINT: loop over all items again and count the ones with line-through
+    let doneCount = 0;
+    for (const item of items) {
+      if (item.style.textDecoration === "line-through") {
+        doneCount++;
+      }
+    }
+
+    status.textContent = `${doneCount} items done`;
+  });
+}   
+
