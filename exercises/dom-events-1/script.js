@@ -26,8 +26,6 @@ greetBtn.addEventListener("click", () => {
   subtitle.textContent = "The button was clicked.";
 }); 
 
- 
-
 
 // TODO 2: add a click event listener to resetBtn
 //         inside it, reset both texts to their original values

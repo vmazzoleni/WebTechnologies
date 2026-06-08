@@ -20,7 +20,7 @@ const status = document.querySelector('[data-el="status"]');
 //         HINT: you already know how to loop over a NodeList
 for (const item of items) {
   item.addEventListener("click", () => {
-    // This function will run when an item is clicked
+
 
     // TODO 2: inside the listener, toggle the line-through style on the clicked item
     //         HINT: you can read and write inline styles via element.style.textDecoration
@@ -45,5 +45,4 @@ for (const item of items) {
 
     status.textContent = `${doneCount} items done`;
   });
-}   
-
+}       
