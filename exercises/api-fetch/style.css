@@ -1,0 +1,317 @@
+/* ============================================================
+   McDOOK SEARCH — Nostalgic McDonald's Theme (early 90s vibes)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap");
+
+/* ── CSS Variables ─────────────────────────────────────── */
+:root {
+  --golden: #ffc72c;
+  --golden-dark: #e8a800;
+  --golden-light: #ffe07a;
+  --red: #da291c;
+  --red-dark: #a81d12;
+  --cream: #fff8e7;
+  --brown: #3d1c02;
+  --white: #fffdf5;
+  --shadow: 4px 4px 0px var(--brown);
+  --shadow-sm: 2px 2px 0px var(--brown);
+}
+
+/* ── Reset & Base ──────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--red);
+  background-image:
+    radial-gradient(circle at 20% 20%, #ff4535 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, #b01e13 0%, transparent 40%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(0, 0, 0, 0.03) 40px,
+      rgba(0, 0, 0, 0.03) 80px
+    );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 60px;
+  color: var(--brown);
+}
+
+/* ── Top Banner ────────────────────────────────────────── */
+body::before {
+  content: "🍟 McDook Search™ 🍔";
+  display: block;
+  width: 100%;
+  background: var(--golden);
+  color: var(--red-dark);
+  font-family: "Alfa Slab One", serif;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 8px 0;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--brown);
+  margin-bottom: 0;
+}
+
+/* ── Hero Header ───────────────────────────────────────── */
+h1 {
+  font-family: "Alfa Slab One", serif;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  color: var(--golden);
+  text-shadow:
+    4px 4px 0 var(--brown),
+    8px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 40px 0 8px;
+  line-height: 1;
+  letter-spacing: -1px;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+h1::after {
+  content: "™";
+  font-size: 0.3em;
+  vertical-align: super;
+  color: var(--golden-light);
+}
+
+/* ── Tagline ───────────────────────────────────────────── */
+body::after {
+  content: "Ba da ba ba baaaa... I'm readin' it!";
+  display: block;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.1rem;
+  color: var(--golden-light);
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: -8px;
+  margin-bottom: 36px;
+  order: -1; /* won't work with flex, handled below */
+}
+
+/* ── Main Card ─────────────────────────────────────────── */
+.card {
+  background: var(--cream);
+  border: 4px solid var(--brown);
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--brown);
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 640px;
+  animation: slideUp 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+/* Since there's no .card wrapper in the HTML, target body children */
+input,
+button,
+ul {
+  display: block;
+}
+
+/* ── Search Input ──────────────────────────────────────── */
+#search-input {
+  width: 100%;
+  max-width: 580px;
+  padding: 14px 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brown);
+  background: var(--white);
+  border: 3px solid var(--brown);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  outline: none;
+  margin: 40px auto 0;
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+}
+
+#search-input::placeholder {
+  color: #b89060;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#search-input:focus {
+  box-shadow: 6px 6px 0 var(--brown);
+  transform: translate(-2px, -2px);
+  background: #fffff0;
+}
+
+/* ── Search Button ─────────────────────────────────────── */
+#search-btn {
+  display: block;
+  margin: 16px auto 0;
+  padding: 14px 48px;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: var(--brown);
+  background: var(--golden);
+  border: 3px solid var(--brown);
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s,
+    background 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+#search-btn::before {
+  content: "🔍 ";
+}
+
+#search-btn:hover {
+  background: var(--golden-light);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--brown);
+}
+
+#search-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--brown);
+}
+
+/* ── Results List ──────────────────────────────────────── */
+#results {
+  list-style: none;
+  width: 100%;
+  max-width: 580px;
+  margin: 32px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease both;
+}
+
+#results li {
+  background: var(--white);
+  border: 3px solid var(--brown);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brown);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+  position: relative;
+  padding-left: 44px;
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+#results li::before {
+  content: "📖";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+}
+
+#results li:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--brown);
+  background: var(--golden-light);
+}
+
+/* Loading & status messages */
+#results li:only-child {
+  text-align: center;
+  padding-left: 18px;
+  font-style: italic;
+  font-weight: 400;
+  color: #7a5c30;
+  background: var(--cream);
+}
+
+#results li:only-child::before {
+  content: none;
+}
+
+/* ── Stagger list items ────────────────────────────────── */
+#results li:nth-child(1) {
+  animation-delay: 0s;
+}
+#results li:nth-child(2) {
+  animation-delay: 0.04s;
+}
+#results li:nth-child(3) {
+  animation-delay: 0.08s;
+}
+#results li:nth-child(4) {
+  animation-delay: 0.12s;
+}
+#results li:nth-child(5) {
+  animation-delay: 0.16s;
+}
+#results li:nth-child(6) {
+  animation-delay: 0.2s;
+}
+#results li:nth-child(7) {
+  animation-delay: 0.24s;
+}
+#results li:nth-child(8) {
+  animation-delay: 0.28s;
+}
+#results li:nth-child(9) {
+  animation-delay: 0.32s;
+}
+#results li:nth-child(10) {
+  animation-delay: 0.36s;
+}
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes popIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Footer fries decoration ───────────────────────────── */
+h1 + * {
+  margin-top: 24px;
+}

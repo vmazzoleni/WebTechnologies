@@ -21,22 +21,31 @@ const second = document.querySelector('[data-item="second"]');
 // HINT: https://javascript.info/dom-navigation#element-only-navigation
 
 // TODO 1: log all direct children of the menu
-console.log("all children:" /* ??? */);
+console.log("all children:" , menu.children);
 
 // TODO 2: log just the first child element of the menu
-console.log("first child:" /* ??? */);
+console.log("first child:" , menu.firstElementChild);
 
 // TODO 3: log just the last child element of the menu
-console.log("last child:" /* ??? */);
+console.log("last child:" , menu.lastElementChild);
 
 // TODO 4: starting from the second item, log its next sibling
-console.log("next sibling:" /* ??? */);
+console.log("next sibling:" , second.nextElementSibling);
 
 // TODO 5: starting from the second item, log its previous sibling
-console.log("previous sibling:" /* ??? */);
+console.log("previous sibling:" , second.previousElementSibling);
 
 // TODO 6: starting from the second item, log its parent element
-console.log("parent:" /* ??? */);
+console.log("parent:" , second.parentElement);
 
 // TODO 7: log how many children the menu has
-console.log("number of children:" /* ??? */);
+console.log("number of children:" , menu.children.length);
+
+// TODO 8: select first element without using siblings
+//starting from second item
+const parent
+    = second.parentElement;
+console.log("first child without siblings:" , parent.firstElementChild);
+
+// Alternative solution for TODO 8: 
+//console.log("first child without siblings:" , menu.querySelector('[data-item="first"]'));
