@@ -2,6 +2,8 @@
 
 Webtechnologies module as part of the interaction design study, 2026.
 
-## Slides
+## 
 
-- [2026-06-01](https://downloads.jonasscheiwiller.ch/2026_Webtech_01.pdf)
+Here are my exercices from the Webtechnologies module.
+Main page should open all exercice overview!
+
